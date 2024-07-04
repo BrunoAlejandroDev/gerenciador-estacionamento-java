@@ -17,7 +17,7 @@ public class GerenciarEstacionamento {
 
     // METODOS PUBLICOS
     public boolean adicionarCliente(Cliente cliente) {
-        if (vagasOcupadas < totalDeVagas) {
+        if (vagasOcupadas <= totalDeVagas) {
             listaClientes.add(cliente);
             vagasOcupadas++;
             return true;
@@ -28,19 +28,43 @@ public class GerenciarEstacionamento {
         }
     }
 
+    public void exibirRecibo(String nomeCliente) {
+
+        Cliente clienteParaRemover = null;
+        for (Cliente c : getListaClientes()) {
+            if (c.getNome().equals(nomeCliente)) {
+                c.exibirRecibo();
+                clienteParaRemover = c;
+                break;
+            }
+        }
+
+        if (clienteParaRemover != null) {
+            removerCliente(clienteParaRemover);
+        } else {
+            System.out.println("Cliente não encontrado.");
+        }
+
+    }
+
     public void removerCliente(Cliente cliente) {
         if (listaClientes.remove(cliente)) {
             vagasOcupadas--;
         }
     }
 
-    public void exibirRecibo() {
-        for (Cliente cliente : listaClientes) {
-            cliente.exibirRecibo();
-        }
-    }
-
     public int exibirVagasRestantes() {
         return totalDeVagas - vagasOcupadas;
+    }
+
+    public void exibirClientesCadastrados() {
+        if (listaClientes.isEmpty()) {
+            System.out.println("Nenhum cliente cadastrado.");
+        }
+        else {
+            for (Cliente c : getListaClientes()) {
+                System.out.printf("Nome do cliente: %s%nTipo de veículo: %s%n", c.getNome(), c.getTipoVeiculo());
+            }
+        }
     }
 }
