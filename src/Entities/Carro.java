@@ -3,24 +3,43 @@ package Entities;
 public class Carro extends Veiculo {
 
     // ATRIBUTOS
-    private static final double TAXA_MINIMA_HORAS = 5.0;
-    private static final double TAXA_ADICIONAL_HORAS = 0.50;
-    private static final double TAXA_DIARIA = 20.0;
-    private static final double ADICONAL_SEGURANCA = 3.0;
+    protected static double taxa_minima_horas = 5.0;
+    protected static double taxa_adicional_horas = 0.50;
+    protected static double taxa_diaria = 20.0;
+    protected static double adicional_seguranca = 3.0;
 
+    // CONSTRUTOR
     public Carro() {
         super("Carro");
     }
 
+    // GETTERS
+    public static double getTaxa_minima_horas() {
+        return taxa_minima_horas;
+    }
+
+    public static double getTaxa_adicional_horas() {
+        return taxa_adicional_horas;
+    }
+
+    public static double getTaxa_diaria() {
+        return taxa_diaria;
+    }
+
+    public static double getAdicional_seguranca() {
+        return adicional_seguranca;
+    }
+
+    // METODOS PUBLICOS
     @Override
     public double calcularTaxa(int tempoPercorrido, boolean porDias) {
         if (porDias) {
-            return TAXA_DIARIA * tempoPercorrido + ADICONAL_SEGURANCA; // retorno caso o veículo fique um dia ou mais no estacionamento
+            return taxa_diaria * tempoPercorrido + adicional_seguranca; // retorno caso o veículo fique um dia ou mais no estacionamento
         }
         else { // retorno caso o veículo fique apenas algumas horas
-            double taxa = TAXA_MINIMA_HORAS;
+            double taxa = taxa_minima_horas;
             if (tempoPercorrido > 2) {
-                taxa += TAXA_ADICIONAL_HORAS * (tempoPercorrido - 2);
+                taxa += taxa_adicional_horas * (tempoPercorrido - 2);
             }
             return taxa;
         }

@@ -2,6 +2,9 @@ package Entities;
 
 public class Cliente {
 
+    // VARIAVEIS
+    private int quantHorasMinimas = 2;
+
     // ATRIBUTOS
     private String nome;
     private Veiculo tipoVeiculo;
@@ -55,14 +58,21 @@ public class Cliente {
 
         if (porDias) {
             System.out.println("Quantidade de dias estacionados: " + quantidade);
+            System.out.println(Carro.getTaxa_diaria());
+            System.out.println(Carro.getAdicional_seguranca());
             System.out.printf("Valor total: %.2f%n", taxa);
         }
         else {
             System.out.println("Quantidade de horas estacionadas: " + quantidade);
-            System.out.printf("Valor total: R$%.2f%n", taxa);
+            String veiculo = tipoVeiculo instanceof Carro ? "Taxa mínima: R$5.00" : "Taxa mínima: 3:00";
+            System.out.println(veiculo + " (até 2 horas de permanência)");
+            System.out.println("Horas extras: " + (quantidade - quantHorasMinimas) + " horas");
+
             if (quantidade > 2) {
-                System.out.printf("Acréscimo por horas extra: R$%.2f%n", taxa - (tipoVeiculo instanceof Carro ? 5.0 : 3.0));
+                System.out.printf("Acréscimo por horas extra: R$%.2f " +
+                        "(%.2f cada)%n", taxa - (tipoVeiculo instanceof Carro ? 5.0 : 3.0), Carro.getTaxa_adicional_horas());
             }
+            System.out.printf("Valor total: R$%.2f%n", taxa);
         }
         System.out.println();
     }
