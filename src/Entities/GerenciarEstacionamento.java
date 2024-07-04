@@ -5,10 +5,33 @@ import java.util.List;
 
 public class GerenciarEstacionamento {
 
+    // VARIÁVEIS E ATRIBUTOS
     private List<Cliente> listaClientes = new ArrayList<>();
+    private int totalDeVagas = 5;
+    private int vagasOcupadas = 0;
 
-    public void adicionarCliente(Cliente cliente) {
-        listaClientes.add(cliente);
+    // GETTERS
+    public List<Cliente> getListaClientes() {
+        return listaClientes;
+    }
+
+    // METODOS PUBLICOS
+    public boolean adicionarCliente(Cliente cliente) {
+        if (vagasOcupadas < totalDeVagas) {
+            listaClientes.add(cliente);
+            vagasOcupadas++;
+            return true;
+        }
+        else {
+            System.out.println("Todas as vagas estão ocupadas. Não é possível cadastrar novos clientes.");
+            return false;
+        }
+    }
+
+    public void removerCliente(Cliente cliente) {
+        if (listaClientes.remove(cliente)) {
+            vagasOcupadas--;
+        }
     }
 
     public void exibirRecibo() {
@@ -17,4 +40,7 @@ public class GerenciarEstacionamento {
         }
     }
 
+    public int exibirVagasRestantes() {
+        return totalDeVagas - vagasOcupadas;
+    }
 }
