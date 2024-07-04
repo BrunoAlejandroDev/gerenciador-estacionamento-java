@@ -12,6 +12,6 @@ public class Estacionamento {
 
         Moto moto1 = new Moto();
         System.out.println(moto1.calcularTaxa(2, true));
-        
+
     }
 }
