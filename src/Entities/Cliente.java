@@ -61,7 +61,7 @@ public class Cliente {
             System.out.println("Quantidade de horas estacionadas: " + quantidade);
             System.out.printf("Valor total: R$%.2f%n", taxa);
             if (quantidade > 2) {
-                System.out.printf("Acréscimo por horas extra: R$%.2f", taxa - (tipoVeiculo instanceof Carro ? 5.0 : 3.0));
+                System.out.printf("Acréscimo por horas extra: R$%.2f%n", taxa - (tipoVeiculo instanceof Carro ? 5.0 : 3.0));
             }
         }
         System.out.println();
