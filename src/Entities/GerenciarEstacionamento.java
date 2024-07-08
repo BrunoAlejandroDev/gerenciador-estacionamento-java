@@ -23,7 +23,6 @@ public class GerenciarEstacionamento {
             return true;
         }
         else {
-            System.out.println("Todas as vagas estão ocupadas. Não é possível cadastrar novos clientes.");
             return false;
         }
     }
@@ -63,7 +62,7 @@ public class GerenciarEstacionamento {
         }
         else {
             for (Cliente c : listaClientes) {
-                System.out.printf("Nome do cliente: %s%nTipo de veículo: %s%n", c.getNome(), c.getTipoVeiculo().toString());
+                System.out.printf("Nome do cliente: %s | Tipo de veículo: %s%n", c.getNome(), c.getTipoVeiculo().toString());
             }
         }
     }

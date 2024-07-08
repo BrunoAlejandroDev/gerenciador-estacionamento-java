@@ -62,17 +62,18 @@ public class Estacionamento {
                         int horasEstacionado = input.nextInt();
                         cliente = new Cliente(nome, veiculoCliente, horasEstacionado);
                     }
-                    gerenciarEstacionamento.adicionarCliente(cliente);
+
                     if (!gerenciarEstacionamento.adicionarCliente(cliente)) {
                         System.out.println("Todas as vagas estão ocupadas. Não é possível cadastrar novos clientes.");
                     }
                     break;
 
                 case 2: // recibo
+                    input.nextLine();
                     System.out.println("Clientes cadastrados: ");
                     gerenciarEstacionamento.exibirClientesCadastrados();
 
-                    System.out.println("Escolha o cliente para exibir o recibo (nome): ");
+                    System.out.print("Escolha o cliente para exibir o recibo (nome): ");
                     String nomeCliente = input.nextLine();
                     gerenciarEstacionamento.exibirRecibo(nomeCliente);
                     break;
@@ -94,7 +95,6 @@ public class Estacionamento {
                     System.out.println("Opção inválida. Tente novamente");
                     break;
             }
-            input.nextLine();
             System.out.println();
         }
     }
