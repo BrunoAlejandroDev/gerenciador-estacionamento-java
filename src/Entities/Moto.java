@@ -3,10 +3,10 @@ package Entities;
 public class Moto extends Veiculo {
 
     // ATRIBUTOS
-    protected static double taxaMinima = 3.0;
-    protected static double taxaAdicionalHoras = 0.5;
+    protected static double taxaMinima = 3.00;
+    protected static double taxaAdicionalHoras = 0.50;
     protected static double taxaDiaria = 15.0;
-    protected static double adicionalSeguranca = 3.0;
+    protected static double adicionalSeguranca = 3.00;
 
     // CONSTRUTOR
     public Moto() {

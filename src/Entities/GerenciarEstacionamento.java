@@ -17,9 +17,9 @@ public class GerenciarEstacionamento {
 
     // METODOS PUBLICOS
     public boolean adicionarCliente(Cliente cliente) {
-        if (vagasOcupadas <= totalDeVagas) {
+        if (vagasOcupadas < totalDeVagas) {
             listaClientes.add(cliente);
-            vagasOcupadas++;
+            ++vagasOcupadas;
             return true;
         }
         else {

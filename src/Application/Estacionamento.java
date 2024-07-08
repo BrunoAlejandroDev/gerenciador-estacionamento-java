@@ -28,6 +28,7 @@ public class Estacionamento {
                 case 1: // cadastrar novo cliente
                     // inserir o nome do cliente
                     input.nextLine();
+                    System.out.println("====== Cadastrar Cliente ======");
                     System.out.print("Insira o nome do cliente: ");
                     String nome = input.nextLine();
 
@@ -70,7 +71,7 @@ public class Estacionamento {
 
                 case 2: // recibo
                     input.nextLine();
-                    System.out.println("Clientes cadastrados: ");
+                    System.out.println("====== Lista de Clientes Cadastrados: ======");
                     gerenciarEstacionamento.exibirClientesCadastrados();
 
                     System.out.print("Escolha o cliente para exibir o recibo (nome): ");
@@ -83,7 +84,8 @@ public class Estacionamento {
                     break;
 
                 case 4: // exibir vagas restantes
-                    System.out.println("Vagas restantes: " + gerenciarEstacionamento.exibirVagasRestantes());
+                    System.out.println("====== Vagas Restantes ======");
+                    System.out.println(gerenciarEstacionamento.exibirVagasRestantes());
                     break;
 
                 case 5:

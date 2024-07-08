@@ -45,7 +45,6 @@ public class Cliente {
         return tipoVeiculo.calcularTaxa(quantidade, porDias);
     }
 
-    // VARIAVEIS
     private int quantHorasMinimas = 2;
     public void exibirRecibo() {
 
@@ -58,7 +57,7 @@ public class Cliente {
             System.out.println("Quantidade de dias estacionados: " + quantidade);
             System.out.println("Taxa diária: R$" + Carro.getTaxaDiaria());
             System.out.println("Taxa de segurança: R$" + Carro.getAdicionalSeguranca());
-            System.out.printf("Valor total: R$ %.2f%n", taxa);
+            System.out.printf("VALOR TOTAL: R$ %.2f%n", taxa);
         }
         else {
             System.out.println("Quantidade de horas estacionadas: " + quantidade);
@@ -76,8 +75,7 @@ public class Cliente {
                 System.out.printf("Acréscimo por horas extra: R$%.2f " +
                         "(%.2f cada)%n", taxa - (tipoVeiculo instanceof Carro ? 5.0 : 3.0), Carro.getTaxaAdicionalHoras());
             }
-            System.out.printf("Valor total: R$%.2f%n", taxa);
+            System.out.printf("VALOR TOTAL: R$%.2f%n", taxa);
         }
-        System.out.println();
     }
 }

@@ -3,10 +3,10 @@ package Entities;
 public class Carro extends Veiculo {
 
     // ATRIBUTOS
-    protected static double taxaMinimaHoras = 5.0;
+    protected static double taxaMinimaHoras = 5.00;
     protected static double taxaAdicionalHoras = 0.50;
     protected static double taxaDiaria = 20.0;
-    protected static double adicionalSeguranca = 3.0;
+    protected static double adicionalSeguranca = 3.00;
 
     // CONSTRUTOR
     public Carro() {
@@ -34,7 +34,7 @@ public class Carro extends Veiculo {
     @Override
     public double calcularTaxa(int tempoPercorrido, boolean porDias) {
         if (porDias) {
-            return taxaDiaria * tempoPercorrido + adicional_seguranca; // retorno caso o veículo fique um dia ou mais no estacionamento
+            return taxaDiaria * tempoPercorrido + adicionalSeguranca; // retorno caso o veículo fique um dia ou mais no estacionamento
         }
         else { // retorno caso o veículo fique apenas algumas horas
             double taxa = taxaMinimaHoras;
