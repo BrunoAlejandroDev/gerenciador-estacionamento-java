@@ -44,4 +44,8 @@ public class Carro extends Veiculo {
             return taxa;
         }
     }
+
+    public String toString() {
+        return super.toString();
+    }
 }

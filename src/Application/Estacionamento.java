@@ -22,14 +22,17 @@ public class Estacionamento {
             System.out.println("5. Sair.");
             System.out.print("Insira uma opção (campo numérico): ");
             int opcaoMenu = input.nextInt();
+            System.out.println();
 
             switch (opcaoMenu) {
                 case 1: // cadastrar novo cliente
                     // inserir o nome do cliente
+                    input.nextLine();
+                    System.out.print("Insira o nome do cliente: ");
                     String nome = input.nextLine();
 
                     // inserir e verificar o tipo de veículo
-                    System.out.print("Insira o tipo de veículo: ");
+                    System.out.print("Insira o tipo de veículo (carro/moto): ");
                     String tipoVeiculo = input.next().toLowerCase();
 
                     Veiculo veiculoCliente;
@@ -59,6 +62,7 @@ public class Estacionamento {
                         int horasEstacionado = input.nextInt();
                         cliente = new Cliente(nome, veiculoCliente, horasEstacionado);
                     }
+                    gerenciarEstacionamento.adicionarCliente(cliente);
                     if (!gerenciarEstacionamento.adicionarCliente(cliente)) {
                         System.out.println("Todas as vagas estão ocupadas. Não é possível cadastrar novos clientes.");
                     }
@@ -78,7 +82,7 @@ public class Estacionamento {
                     break;
 
                 case 4: // exibir vagas restantes
-                    gerenciarEstacionamento.exibirVagasRestantes();
+                    System.out.println("Vagas restantes: " + gerenciarEstacionamento.exibirVagasRestantes());
                     break;
 
                 case 5:

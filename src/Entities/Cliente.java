@@ -2,9 +2,6 @@ package Entities;
 
 public class Cliente {
 
-    // VARIAVEIS
-    private int quantHorasMinimas = 2;
-
     // ATRIBUTOS
     private String nome;
     private Veiculo tipoVeiculo;
@@ -48,7 +45,8 @@ public class Cliente {
         return tipoVeiculo.calcularTaxa(quantidade, porDias);
     }
 
-
+    // VARIAVEIS
+    private int quantHorasMinimas = 2;
     public void exibirRecibo() {
 
         double taxa = calcularTaxa();

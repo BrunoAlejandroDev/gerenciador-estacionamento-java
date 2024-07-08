@@ -7,7 +7,7 @@ public class GerenciarEstacionamento {
 
     // VARIÁVEIS E ATRIBUTOS
     private List<Cliente> listaClientes = new ArrayList<>();
-    private int totalDeVagas = 5;
+    private int totalDeVagas = 3;
     private int vagasOcupadas = 0;
 
     // GETTERS
@@ -62,8 +62,8 @@ public class GerenciarEstacionamento {
             System.out.println("Nenhum cliente cadastrado.");
         }
         else {
-            for (Cliente c : getListaClientes()) {
-                System.out.printf("Nome do cliente: %s%nTipo de veículo: %s%n", c.getNome(), c.getTipoVeiculo());
+            for (Cliente c : listaClientes) {
+                System.out.printf("Nome do cliente: %s%nTipo de veículo: %s%n", c.getNome(), c.getTipoVeiculo().toString());
             }
         }
     }
