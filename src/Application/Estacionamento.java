@@ -31,7 +31,7 @@ public class Estacionamento {
                     input.nextLine();
                     System.out.println("====== Cadastrar Cliente ======");
                     System.out.print("Insira o nome do cliente: ");
-                    String nome = input.nextLine();
+                    String nome = input.nextLine().toLowerCase();
 
                     // inserir e verificar o tipo de veículo
                     System.out.print("Insira o tipo de veículo (carro/moto): ");
@@ -79,7 +79,7 @@ public class Estacionamento {
                     boolean clienteEncontrado = false;
                     while(!clienteEncontrado) {
                         System.out.print("Digite o nome do cliente que deseja exibir o recibo (ou 'sair' para encerrar): ");
-                        String nomeCliente = input.nextLine();
+                        String nomeCliente = input.nextLine().toLowerCase();
 
                         if (nomeCliente.equalsIgnoreCase("sair")) {
                             break; // usuário saiu do loop e cancelou a operação

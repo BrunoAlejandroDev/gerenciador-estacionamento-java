@@ -32,7 +32,7 @@ public class GerenciarEstacionamento {
 
         Cliente clienteParaRemover = null;
         for (Cliente c : getListaClientes()) {
-            if (c.getNome().equals(nomeCliente)) {
+            if (c.getNome().toLowerCase().equals(nomeCliente)) {
                 c.exibirRecibo();
                 clienteParaRemover = c;
                 break;
