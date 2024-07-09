@@ -2,6 +2,7 @@ package Entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class GerenciarEstacionamento {
 
@@ -27,7 +28,7 @@ public class GerenciarEstacionamento {
         }
     }
 
-    public void exibirRecibo(String nomeCliente) {
+    public boolean exibirRecibo(String nomeCliente) {
 
         Cliente clienteParaRemover = null;
         for (Cliente c : getListaClientes()) {
@@ -40,8 +41,9 @@ public class GerenciarEstacionamento {
 
         if (clienteParaRemover != null) {
             removerCliente(clienteParaRemover);
+            return true;
         } else {
-            System.out.println("Cliente não encontrado.");
+            return false;
         }
 
     }
