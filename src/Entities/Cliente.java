@@ -60,18 +60,18 @@ public class Cliente {
             System.out.printf("VALOR TOTAL: R$ %.2f%n", taxa);
         }
         else {
-            System.out.println("Quantidade de horas estacionadas: " + quantidade);
-            String veiculo;
+            System.out.println("Quantidade de horas estacionadas: " + quantidade + " horas");
+            double veiculo;
             if (tipoVeiculo instanceof Carro) {
-                veiculo = "Taxa mínima: R$" + Carro.getTaxaMinimaHoras();
+                veiculo = Carro.getTaxaMinimaHoras();
             }
             else {
-                veiculo = "Taxa mínima: R$" + Moto.getTaxaMinima();
+                veiculo = Moto.getTaxaMinima();
             }
-            System.out.println(veiculo + " (até 2 horas de permanência)");
-            System.out.println("Horas extras: " + (quantidade - quantHorasMinimas) + " horas");
+            System.out.printf("Taxa mínima: %.2f (até 2 horas de permanência)%n", veiculo);
 
             if (quantidade > 2) {
+                System.out.println("Horas extras: " + (quantidade - quantHorasMinimas) + " horas");
                 System.out.printf("Acréscimo por horas extra: R$%.2f " +
                         "(%.2f cada)%n", taxa - (tipoVeiculo instanceof Carro ? 5.0 : 3.0), Carro.getTaxaAdicionalHoras());
             }
