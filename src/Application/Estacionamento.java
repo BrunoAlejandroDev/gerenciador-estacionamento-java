@@ -72,29 +72,38 @@ public class Estacionamento {
 
                 case 2: // recibo
                     input.nextLine();
-                    System.out.println("====== Lista de Clientes Cadastrados: ======");
-                    gerenciarEstacionamento.exibirClientesCadastrados();
-                    System.out.println();
+                    System.out.println("====== Lista de Clientes Cadastrados ======");
+                    boolean listaDeClientes = gerenciarEstacionamento.exibirClientesCadastrados();
 
-                    boolean clienteEncontrado = false;
-                    while(!clienteEncontrado) {
-                        System.out.print("Digite o nome do cliente que deseja exibir o recibo (ou 'sair' para encerrar): ");
-                        String nomeCliente = input.nextLine().toLowerCase();
+                    if (!listaDeClientes) {
+                        System.out.println("Nenhum cliente cadastrado.");
+                    }
+                    else {
+                        boolean clienteEncontrado = false;
+                        while(!clienteEncontrado) {
+                            System.out.print("Digite o nome do cliente que deseja exibir o recibo (ou 'sair' para encerrar): ");
+                            String nomeCliente = input.nextLine().toLowerCase();
 
-                        if (nomeCliente.equalsIgnoreCase("sair")) {
-                            break; // usuário saiu do loop e cancelou a operação
-                        }
+                            if (nomeCliente.equalsIgnoreCase("sair")) {
+                                break; // usuário saiu do loop e cancelou a operação
+                            }
 
-                        clienteEncontrado = gerenciarEstacionamento.exibirRecibo(nomeCliente); // variável recebe true caso seja encontrado o cliente
-                        if(!clienteEncontrado) { // caso contrário, entra no if
-                            System.out.println("Cliente não encontrado. Tente novamente.\n");
+                            clienteEncontrado = gerenciarEstacionamento.exibirRecibo(nomeCliente); // variável recebe true caso seja encontrado o cliente
+                            if(!clienteEncontrado) { // caso contrário, entra no if
+                                System.out.println("Cliente não encontrado. Tente novamente.\n");
+                            }
                         }
                     }
 
                     break;
 
                 case 3: // exibir lista de clientes cadastrados
-                    gerenciarEstacionamento.exibirClientesCadastrados();
+                    System.out.println("====== Lista de Clientes Cadastrados ======");
+                    boolean exibirClientes = gerenciarEstacionamento.exibirClientesCadastrados();
+
+                    if (!exibirClientes) {
+                        System.out.println("Nenhum cliente cadastrado.");
+                    }
                     break;
 
                 case 4: // exibir vagas restantes

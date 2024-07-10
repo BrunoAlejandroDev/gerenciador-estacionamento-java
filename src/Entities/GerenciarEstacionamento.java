@@ -58,14 +58,15 @@ public class GerenciarEstacionamento {
         return totalDeVagas - vagasOcupadas;
     }
 
-    public void exibirClientesCadastrados() {
+    public boolean exibirClientesCadastrados() {
         if (listaClientes.isEmpty()) {
-            System.out.println("Nenhum cliente cadastrado.");
+            return false;
         }
         else {
             for (Cliente c : listaClientes) {
                 System.out.printf("Nome do cliente: %s | Tipo de veículo: %s%n", c.getNome(), c.getTipoVeiculo().toString());
             }
+            return true;
         }
     }
 }
