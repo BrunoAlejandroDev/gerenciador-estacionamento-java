@@ -26,47 +26,50 @@ public class Estacionamento {
             System.out.println();
 
             switch (opcaoMenu) {
+
                 case 1: // cadastrar novo cliente
-                    // inserir o nome do cliente
-                    input.nextLine();
-                    System.out.println("====== Cadastrar Cliente ======");
-                    System.out.print("Insira o nome do cliente: ");
-                    String nome = input.nextLine();
-
-                    // inserir e verificar o tipo de veículo
-                    System.out.print("Insira o tipo de veículo (carro/moto): ");
-                    String tipoVeiculo = input.next();
-
-                    Veiculo veiculoCliente;
-                    if (tipoVeiculo.equals("carro")) {
-                        veiculoCliente = new Carro();
-                    }
-                    else if (tipoVeiculo.equals("moto")) {
-                        veiculoCliente = new Moto();
+                    if (gerenciarEstacionamento.exibirVagasRestantes() == 0) {
+                        System.out.println("Todas as vagas estão ocupadas.");
                     }
                     else {
-                        System.out.println("ERROR: insira um tipo de veículo válido. Use 'carro' ou 'moto'.");
-                        continue;
-                    }
+                        // inserir o nome do cliente
+                        input.nextLine();
+                        System.out.println("====== Cadastrar Cliente ======");
+                        System.out.print("Insira o nome do cliente: ");
+                        String nome = input.nextLine();
 
-                    // inserir e verificar se vão ser horas ou dias e instanciar o cliente
-                    System.out.print("O cliente vai deixar o carro por horas ou dias? (h/d): ");
-                    char opcao = input.next().charAt(0);
+                        // inserir e verificar o tipo de veículo
+                        System.out.print("Insira o tipo de veículo (carro/moto): ");
+                        String tipoVeiculo = input.next();
 
-                    Cliente cliente;
-                    if (opcao == 'd') {
-                        System.out.print("Insira a quantidade de dias que o veículo ficará estacionado: ");
-                        int diasEstacionado = input.nextInt();
-                        cliente = new Cliente(nome, veiculoCliente, diasEstacionado, true);
-                    }
-                    else {
-                        System.out.print("Insira a quantidade de horas que o veículo ficará estacionado: ");
-                        int horasEstacionado = input.nextInt();
-                        cliente = new Cliente(nome, veiculoCliente, horasEstacionado);
-                    }
+                        Veiculo veiculoCliente;
+                        if (tipoVeiculo.equals("carro")) {
+                            veiculoCliente = new Carro();
+                        } else if (tipoVeiculo.equals("moto")) {
+                            veiculoCliente = new Moto();
+                        } else {
+                            System.out.println("ERROR: insira um tipo de veículo válido. Use 'carro' ou 'moto'.");
+                            continue;
+                        }
 
-                    if (!gerenciarEstacionamento.adicionarCliente(cliente)) {
-                        System.out.println("Todas as vagas estão ocupadas. Não é possível cadastrar novos clientes.");
+                        // inserir e verificar se vão ser horas ou dias e instanciar o cliente
+                        System.out.print("O cliente vai deixar o carro por horas ou dias? (h/d): ");
+                        char opcao = input.next().charAt(0);
+
+                        Cliente cliente;
+                        if (opcao == 'd') {
+                            System.out.print("Insira a quantidade de dias que o veículo ficará estacionado: ");
+                            int diasEstacionado = input.nextInt();
+                            cliente = new Cliente(nome, veiculoCliente, diasEstacionado, true);
+                        } else {
+                            System.out.print("Insira a quantidade de horas que o veículo ficará estacionado: ");
+                            int horasEstacionado = input.nextInt();
+                            cliente = new Cliente(nome, veiculoCliente, horasEstacionado);
+                        }
+
+                        if (!gerenciarEstacionamento.adicionarCliente(cliente)) {
+                            System.out.println("Todas as vagas estão ocupadas. Não é possível cadastrar novos clientes.");
+                        }
                     }
                     break;
 
@@ -94,7 +97,6 @@ public class Estacionamento {
                             }
                         }
                     }
-
                     break;
 
                 case 3: // exibir lista de clientes cadastrados
@@ -108,7 +110,7 @@ public class Estacionamento {
 
                 case 4: // exibir vagas restantes
                     System.out.println("====== Vagas Restantes ======");
-                    System.out.println(gerenciarEstacionamento.exibirVagasRestantes());
+                    System.out.println(gerenciarEstacionamento.exibirVagasRestantes() + " vagas");
                     break;
 
                 case 5:
