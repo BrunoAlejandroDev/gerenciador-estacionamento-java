@@ -22,7 +22,7 @@ public class Estacionamento {
             System.out.println("4. Visualizar vagas restantes.");
             System.out.println("5. Sair.");
             System.out.print("Insira uma opção (campo numérico): ");
-            int opcaoMenu = input.nextInt();
+            int opcaoMenu = validarEntradaMenu(input);
             System.out.println();
 
             switch (opcaoMenu) {
@@ -122,5 +122,13 @@ public class Estacionamento {
             }
             System.out.println();
         }
+    }
+
+    public static int validarEntradaMenu(Scanner input) {
+        while (!input.hasNextInt()) {
+            System.out.print("ERRO: entrada inválida. Insira um valor numérico: ");
+            input.next();
+        }
+        return input.nextInt();
     }
 }
