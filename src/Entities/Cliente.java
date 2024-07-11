@@ -46,6 +46,9 @@ public class Cliente {
 //    }
 
     public void exibirRecibo() {
+        System.out.println();
+        System.out.println("====== Recibo do(a) cliente " + getNome() + " ======");
+        System.out.println("Tipo de veículo: " + getTipoVeiculo());
         tipoVeiculo.exibirRecibo(quantidade, porDias);
     }
 }

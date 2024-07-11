@@ -45,15 +45,9 @@ public class Carro extends Veiculo {
         }
     }
 
-    Cliente nomeCliente;
-    Veiculo tipoVeiculo;
     private int quantHorasMinimas = 2;
     @Override
     public void exibirRecibo(int quantidade, boolean porDias) {
-
-        System.out.println();
-        System.out.println("====== Recibo do cliente " + nomeCliente.getNome() + " ======");
-        System.out.println("Tipo de veículo: " + tipoVeiculo.getTipoVeiculo());
 
         if (porDias) {
             System.out.println("Quantidade de dias estacionados: " + quantidade);
@@ -62,13 +56,13 @@ public class Carro extends Veiculo {
             System.out.printf("VALOR TOTAL: R$ %.2f%n", calcularTaxa(quantidade, porDias));
         }
         else {
-            System.out.println("Quantidade de horas estacionadas: " + quantidade + " horas");
+            System.out.println("Quantidade de horas estacionadas: " + quantidade + " hora(s)");
             System.out.printf("Taxa mínima: %.2f (até 2 horas de permanência)%n", getTaxaMinimaHoras());
 
             if (quantidade > 2) {
-                System.out.println("Horas extras: " + (quantidade - quantHorasMinimas) + " horas");
+                System.out.println("Horas extras: " + (quantidade - quantHorasMinimas) + " hora(s)");
                 System.out.printf("Acréscimo por horas extra: R$%.2f " +
-                        "(%.2f cada)%n", calcularTaxa(quantidade, porDias) - getTaxaMinimaHoras(), getTaxaAdicionalHoras());
+                        "(cada)%n", calcularTaxa(quantidade, porDias) - getTaxaMinimaHoras());
             }
             System.out.printf("VALOR TOTAL: R$%.2f%n", calcularTaxa(quantidade, porDias));
         }
