@@ -31,11 +31,11 @@ public class Estacionamento {
                     input.nextLine();
                     System.out.println("====== Cadastrar Cliente ======");
                     System.out.print("Insira o nome do cliente: ");
-                    String nome = input.nextLine().toLowerCase();
+                    String nome = input.nextLine();
 
                     // inserir e verificar o tipo de veículo
                     System.out.print("Insira o tipo de veículo (carro/moto): ");
-                    String tipoVeiculo = input.next().toLowerCase();
+                    String tipoVeiculo = input.next();
 
                     Veiculo veiculoCliente;
                     if (tipoVeiculo.equals("carro")) {

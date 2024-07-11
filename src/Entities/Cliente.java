@@ -68,7 +68,7 @@ public class Cliente {
             else {
                 veiculo = Moto.getTaxaMinima();
             }
-            System.out.printf("Taxa mínima: %.2f (até 2 horas de permanência)%n", veiculo);
+            System.out.printf("Taxa mínima: %.2f (até 2 horas de permanência)%n", tipoVeiculo.get);
 
             if (quantidade > 2) {
                 System.out.println("Horas extras: " + (quantidade - quantHorasMinimas) + " horas");
