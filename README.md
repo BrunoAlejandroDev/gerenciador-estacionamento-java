@@ -19,6 +19,7 @@ mais funcionalidades que deixariam o projeto mais completo.
 
 - **Para a primeira opção**: O usuário deverá informar o nome do cliente a ser cadastrado, depois informar o tipo de veículo do cliente (carro ou moto), por fim, informar se o cliente vai deixar o veículo por horas ou dias e, a partir da opção inserida, informar a quantidade
 de horas ou de dias. Caso o estacionamento possua vagas disponíveis, o cliente será cadastrado, caso contrário, será informado que o estacionamento está sem vagas restantes.
+
   ![image](https://github.com/user-attachments/assets/b81c7423-fd09-4261-b462-872dbca57f33)
 
 - **Para a segunda opção**: Será exibido uma lista de clientes cadastrados. Caso possua clientes cadastrados, o sistema retornará o nome dos clientes cadastrados e o usuário deve digitar o nome do cliente que ele deseja exibir o recibo. Caso o cliente seja encontrado,
@@ -28,6 +29,7 @@ o recibo do mesmo será exibido e a vaga que ele ocupava será liberada.
   ![image](https://github.com/user-attachments/assets/b9548574-aebf-4ed3-bb15-15740bb5283b)
 
 - **Para a terceira opção**: Caso o sistema possua clientes cadastrados, o nome e o tipo de veículo vão ser retornados. Caso contrário, uma mensagem será exibida: "Nenhum cliente cadastrado".
+
   ![image](https://github.com/user-attachments/assets/b7fbdf15-8eaa-4b80-8379-70c89bcf53a7)
 
 - **Para a quarta opção**: O número de vagas restantes será retornado. O cálculo é feito com base na quantidade de vagas definidas e o número de clientes cadastrados (cada cliente cadastrado ocupa uma vaga).
