@@ -3,10 +3,10 @@ package Entities;
 public class Carro extends Veiculo {
 
     // ATRIBUTOS
-    protected static double taxaMinimaHoras = 5.00;
-    protected static double taxaAdicionalHoras = 0.50;
-    protected static double taxaDiaria = 20.0;
-    protected static double adicionalSeguranca = 3.00;
+    private static double taxaMinimaHoras = 5.00;
+    private static double taxaAdicionalHoras = 0.50;
+    private static double taxaDiaria = 20.0;
+    private static double adicionalSeguranca = 3.00;
 
     // CONSTRUTOR
     public Carro() {

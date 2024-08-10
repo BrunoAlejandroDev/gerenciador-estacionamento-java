@@ -11,9 +11,9 @@ public abstract class Veiculo {
     }
 
     // GETTER
-    public String getTipoVeiculo() {
-        return tipoVeiculo;
-    }
+//    public String getTipoVeiculo() {
+//        return tipoVeiculo;
+//    }
 
     // METODOS PUBLICOS
     public abstract double calcularTaxa(int tempoPercorrido, boolean porDias);
